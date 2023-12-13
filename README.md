@@ -1,5 +1,13 @@
 # Final Project
 
+TO-DO-LIST
+
+~~- Signup and Login~~
+~~- List of Plants~~
+- User Authentication for User and Admin (Pat)
+- Plant Description and How to Take Care (Ramoel)
+- Admin Homepage
+
 Project Name (Android Studio): FinalProject
 
 This application serves as a plant dictionary, where the user can view the list of plants, along with their
