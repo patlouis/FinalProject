@@ -4,12 +4,14 @@ This application serves as a plant dictionary, where the user can view the list 
 information and details on how to take care of them. The app features 2 different access, the user and the admin.
 
 **SIGNUP**
+
 User creates an account using
 - Email
 - Full Name
 - Password
 
 **LOGIN**
+
 User logins using
 - Email
 - Password
