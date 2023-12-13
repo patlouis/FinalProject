@@ -12,17 +12,15 @@ information and details on how to take care of them. The app features 2 differen
 - Email
 - Password
 
-**HOME**
-
-USER
+**USER HOMEPAGE**
 - List of plants
 - View each details of plants
 
-  ADMIN
+**ADMIN HOMEPAGE**
   - List of plants (can edit plant details)
   - List of accounts (database)
 
-ERROR HANDLING
+**ERROR HANDLING**
 - If fields are left blank
 - If username or password is incorrect
 - If primary key is the same
