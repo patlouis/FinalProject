@@ -1,5 +1,7 @@
 # Final Project
 
+Project Name (Android Studio): FinalProject
+
 This application serves as a plant dictionary, where the user can view the list of plants, along with their 
 information and details on how to take care of them. The app features 2 different access, the user and the admin.
 
