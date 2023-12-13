@@ -1,7 +1,7 @@
 # Final Project
 
-This application is a plant dictionary, where the user can view the list of plants, along with their information 
-and details on how to take care of them. The app features 2 different access, the user and the admin.
+This application serves as a plant dictionary, where the user can view the list of plants, along with their 
+information and details on how to take care of them. The app features 2 different access, the user and the admin.
 
 The user can view the list of plants. 
 The admin can edit the details of the plant, and view the list of accounts from the database.
