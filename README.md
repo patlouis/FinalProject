@@ -4,7 +4,7 @@ TO-DO-LIST
 
 ~~- Signup and Login~~
 ~~- List of Plants~~
-- User Authentication for User and Admin (Pat)
+~~- User Authentication for User and Admin (Pat)~~
 - Plant Description and How to Take Care (Ramoel)
 - Admin Homepage
 
