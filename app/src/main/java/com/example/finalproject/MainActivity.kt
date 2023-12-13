@@ -63,7 +63,7 @@ class MainActivity : AppCompatActivity() {
 
     // Function that checks if the password is valid
     private fun isPasswordValid(password: String): Boolean {
-        val passwordPattern = Regex("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@\$!%*?&_#])[A-Za-z\\d@$!%*?&_#]{8,}\$")
+        val passwordPattern = Regex("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@\$!%*?&_#<>~^)(])[A-Za-z\\d@$!%*?&_#<>~^()]{8,}\$")
         return passwordPattern.matches(password)
     }
 
