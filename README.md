@@ -20,7 +20,7 @@ information and details on how to take care of them. The app features 2 differen
 
 **ADMIN HOMEPAGE**
   - List of plants (can edit plant details)
-  - List of accounts (database)
+  - List of accounts from database (add/delete/edit?)
 
 **ERROR HANDLING**
 - If fields are left blank
