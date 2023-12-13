@@ -66,6 +66,13 @@ class MainActivity : AppCompatActivity() {
         val passwordPattern = Regex("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@\$!%*?&_#<>~^)(])[A-Za-z\\d@$!%*?&_#<>~^()]{8,}\$")
         return passwordPattern.matches(password)
     }
+    // Create admin account with these conditions
+    /* private fun isPasswordValid(password: String): Boolean {
+    // Remove all conditions, allow any string of length 1 or more
+    val passwordPattern = Regex("^.{1,}$")
+    return passwordPattern.matches(password)
+    }
+    */
 
     // Prompts a message after a successful registration
     private fun showSignInDialog() {
