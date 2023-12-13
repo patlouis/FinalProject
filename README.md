@@ -1,4 +1,4 @@
-# Machine Problem 5
+# Final Project
 
 This application features 3 different pages, the first one being the registration, where the user
 creates their own account with their credentials, the login page, where they input their credentials,
