@@ -1,6 +1,6 @@
 # Final Project
 
-TO-DO-LIST
+**TO-DO-LIST**
 
 ~~- Signup and Login~~
 ~~- List of Plants~~
@@ -8,8 +8,8 @@ TO-DO-LIST
 ~~- Admin Homepage (Pat)~~
 ~~- Add and Update Record in Admin Homepage(Pat)~~
 ~~- Add SearchView (Pat)~~
-- Plant Description and How to Take Care (Ramoel)
-- Working SearchView (Pat)
+~~- Working SearchView (Pat)~~
+- Description and How to Take Care of Plant (Ramoel)
 
 
 Project Name (Android Studio): FinalProject
@@ -33,7 +33,6 @@ information and details on how to take care of them. The app features 2 differen
 - View each details of plants
 
 **ADMIN HOMEPAGE**
-- List of plants (can edit plant details)
 - List of accounts from database (add/delete/edit?)
 
 **ERROR HANDLING**

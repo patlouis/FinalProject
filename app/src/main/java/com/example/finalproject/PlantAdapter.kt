@@ -19,20 +19,21 @@ class PlantAdapter(private var plantList:ArrayList<Plant>)
         mListener = listener
     }
 
-    class PlantViewHolder(itemView:View, listener: onItemClickListener) : RecyclerView.ViewHolder(itemView) {
+    inner class PlantViewHolder(itemView:View) : RecyclerView.ViewHolder(itemView) { // (itemView:View, listener: onItemClickListener)
         val imageView: ImageView = itemView.findViewById(R.id.imageView)
         val textView: TextView = itemView.findViewById(R.id.textView)
 
-        init {
+        /* init {
             itemView.setOnClickListener {
                 listener.onItemClick(adapterPosition)
             }
         }
+       */
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PlantViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.each_item, parent, false)
-        return PlantViewHolder(view,mListener)
+        return PlantViewHolder(view)
     }
 
     override fun onBindViewHolder(holder: PlantViewHolder, position: Int) {
@@ -45,4 +46,8 @@ class PlantAdapter(private var plantList:ArrayList<Plant>)
         return plantList.size
     }
 
+    fun setFilteredList(plantList: ArrayList<Plant>) {
+        this.plantList = plantList
+        notifyDataSetChanged()
+    }
 }
