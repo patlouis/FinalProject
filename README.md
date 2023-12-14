@@ -9,7 +9,7 @@ TO-DO-LIST
 ~~- Add and Update Record in Admin Homepage(Pat)~~
 ~~- Add SearchView (Pat)~~
 - Plant Description and How to Take Care (Ramoel)
-- Working SearchView (Ramoel)
+- Working SearchView (Pat)
 
 
 Project Name (Android Studio): FinalProject
