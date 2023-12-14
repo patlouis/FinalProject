@@ -17,12 +17,6 @@
         android:text="First Name" />
 
     <TextView
-        android:id="@+id/textViewLName"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Last Name" />
-
-    <TextView
         android:id="@+id/textViewPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

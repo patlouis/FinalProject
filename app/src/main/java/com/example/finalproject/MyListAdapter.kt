@@ -14,12 +14,11 @@ class MyListAdapter(private val context: Activity, private val email: Array<Stri
 
         val emailText = rowView.findViewById<TextView>(R.id.textViewEmail)
         val fNameText = rowView.findViewById<TextView>(R.id.textViewFName)
-        val lNameText = rowView.findViewById<TextView>(R.id.textViewLName)
         val passwordText = rowView.findViewById<TextView>(R.id.textViewPassword)
 
         emailText.text = "Email: ${email[position]}"
-        fNameText.text = "First Name: ${firstName[position]}"
-        passwordText.text = "Last Name: ${password[position]}"
+        fNameText.text = "Full Name: ${firstName[position]}"
+        passwordText.text = "Password: ${password[position]}"
 
         return rowView
     }

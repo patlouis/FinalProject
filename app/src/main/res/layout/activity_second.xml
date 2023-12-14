@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.finalproject.MainActivity"
+    tools:context="com.example.finalproject.SecondActivity"
     android:backgroundTint="@color/background"
     >
 
@@ -87,7 +87,6 @@
         android:width="300dp"
         android:background="@drawable/button_shape"
         android:fontFamily="@font/poppinssemibold"
-        android:onClick="saveRecord"
         android:text="Login"
         android:textAlignment="center"
         android:textColor="@color/white"
@@ -103,7 +102,6 @@
         android:width="300dp"
         android:background="@drawable/button_shape"
         android:fontFamily="@font/poppinssemibold"
-        android:onClick="saveRecord"
         android:text="Login"
         android:textAlignment="center"
         android:textColor="@color/white"

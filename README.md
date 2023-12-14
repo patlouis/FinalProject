@@ -4,11 +4,14 @@ TO-DO-LIST
 
 ~~- Signup and Login~~
 ~~- List of Plants~~
-- User Authentication for User and Admin (Pat)
+~~- User Authentication for User and Admin (Pat)~~
 - Plant Description and How to Take Care (Ramoel)
-- Admin Homepage
+~~- Admin Homepage (Pat)~~
+- Add and Update Record in Admin Homepage(Pat)
 
 Project Name (Android Studio): FinalProject
+
+Admin Account: email= admin | password = admin
 
 This application serves as a plant dictionary, where the user can view the list of plants, along with their
 information and details on how to take care of them. The app features 2 different access, the user and the admin.

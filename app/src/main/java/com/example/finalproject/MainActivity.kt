@@ -5,6 +5,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.EditText
+import android.widget.ListView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
@@ -63,9 +64,16 @@ class MainActivity : AppCompatActivity() {
 
     // Function that checks if the password is valid
     private fun isPasswordValid(password: String): Boolean {
-        val passwordPattern = Regex("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@\$!%*?&_#])[A-Za-z\\d@$!%*?&_#]{8,}\$")
+        val passwordPattern = Regex("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@\$!%*?&_#<>~^)(])[A-Za-z\\d@$!%*?&_#<>~^()]{8,}\$")
         return passwordPattern.matches(password)
     }
+    // Create admin account with these conditions
+    /* private fun isPasswordValid(password: String): Boolean {
+    // Remove all conditions, allow any string of length 1 or more
+    val passwordPattern = Regex("^.{1,}$")
+    return passwordPattern.matches(password)
+    }
+    */
 
     // Prompts a message after a successful registration
     private fun showSignInDialog() {
@@ -92,59 +100,6 @@ class MainActivity : AppCompatActivity() {
         for (editText in editTexts) {
             editText.text.clear()
         }
-    }
-
-    /* fun viewRecord(view: View) {
-        val databaseHandler: DatabaseHandler = DatabaseHandler(this)
-        val emp: List<EmpModelClass> = databaseHandler.viewEmployee()
-        val empArrayId = Array<String>(emp.size) {"null"}
-        val empArrayName = Array<String>(emp.size) {"null"}
-        val empArrayEmail = Array<String>(emp.size) {"null"}
-        val empArrayPassword = Array<String>(emp.size) {"null"}
-
-        var index = 0
-        for(e in emp) {
-            empArrayId[index] = e.userEmail
-            empArrayName[index] = e.userFName
-            empArrayEmail[index] = e.userLName
-            empArrayPassword[index] = e.userPassword
-            index++
-        }
-        val listview = findViewById<ListView>(R.id.listView)
-        val myListAdapter = MyListAdapter(this,empArrayId,empArrayName,empArrayEmail,empArrayPassword)
-        listview.adapter = myListAdapter
-    }
-    */
-
-    fun deleteRecord(view: View) {
-        val dialogBuilder = AlertDialog.Builder(this)
-        val inflater = this.layoutInflater
-        val dialogView = inflater.inflate(R.layout.delete_dialog,null)
-        dialogBuilder.setView(dialogView)
-
-        val editId = dialogView.findViewById<EditText>(R.id.deleteId)
-
-        dialogBuilder.setTitle("Delete Record")
-        dialogBuilder.setMessage("Enter data below")
-        dialogBuilder.setPositiveButton("Delete", DialogInterface.OnClickListener { dialogInterface, i ->
-            val deleteId = editId.text.toString()
-            val databaseHandler: DatabaseHandler = DatabaseHandler(this)
-
-            if(deleteId.trim()!="") {
-                val status = databaseHandler.deleteEmployee(EmpModelClass(deleteId,"",""))
-                if(status > -1) {
-                    Toast.makeText(this, "Record Deleted", Toast.LENGTH_LONG).show()
-                }
-            } else {
-                Toast.makeText(this, "ID or name or Email or Password cannot be blank", Toast.LENGTH_LONG).show()
-            }
-        })
-        dialogBuilder.setNegativeButton("Cancel", DialogInterface.OnClickListener { dialogInterface, i ->
-
-        })
-
-        val b = dialogBuilder.create()
-        b.show()
     }
 
     fun goToLogin(view:View) {
