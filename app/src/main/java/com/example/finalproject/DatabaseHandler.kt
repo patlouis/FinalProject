@@ -104,14 +104,14 @@ class DatabaseHandler(context: Context): SQLiteOpenHelper(context,
         return null
     }
 
-    fun updateEmployee(emp: EmpModelClass) : Int {
+    fun updateEmployee(emp: EmpModelClass): Int {
         val db = this.writableDatabase
         val contentValues = ContentValues()
         contentValues.put(KEY_EMAIL, emp.userEmail)
         contentValues.put(KEY_FNAME, emp.userFName)
         contentValues.put(KEY_PASSWORD, emp.userPassword)
 
-        val success = db.update(TABLE_CONTACTS, contentValues, "id= " + emp.userEmail, null)
+        val success = db.update(TABLE_CONTACTS, contentValues, "$KEY_EMAIL=?", arrayOf(emp.userEmail))
         db.close()
         return success
     }

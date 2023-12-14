@@ -134,7 +134,7 @@
             android:layout_marginLeft="5dp"
             android:fontFamily="@font/poppinsregular"
             android:onClick="goToRegister"
-            android:text="Register"
+            android:text="SIgnup"
             android:textColor="@color/secondary_color"
             android:textSize="12dp" />
     </LinearLayout>

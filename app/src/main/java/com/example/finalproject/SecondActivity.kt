@@ -62,6 +62,8 @@ class SecondActivity : AppCompatActivity() {
         }
     }
 
+
+
     fun goToRegister(view: View) {
         val textView = findViewById<TextView>(R.id.txt_register)
 
