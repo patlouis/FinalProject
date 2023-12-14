@@ -7,8 +7,10 @@ TO-DO-LIST
 ~~- User Authentication for User and Admin (Pat)~~
 ~~- Admin Homepage (Pat)~~
 ~~- Add and Update Record in Admin Homepage(Pat)~~
+~~- Add SearchView (Pat)~~
 - Plant Description and How to Take Care (Ramoel)
-- Add SearchView to RecyclerView (Pat)
+- Working SearchView (Ramoel)
+
 
 Project Name (Android Studio): FinalProject
 
