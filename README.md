@@ -20,6 +20,8 @@
 
 Admin Account: email == admin && password == admin
 
+**INTRODUCTION**
+
 Welcome to our Plant Companion app — your green haven for all things botanical! Dive into a world of plants, where our application acts as a dynamic plant dictionary. Users can effortlessly explore a curated list of plants, accompanied by detailed information and expert care guidelines.
 
 What sets us apart is the dual-access feature catering to both users and administrators. For enthusiasts, it's a seamless journey of discovery and learning, while administrators wield the power to curate and maintain a thriving plant database.
