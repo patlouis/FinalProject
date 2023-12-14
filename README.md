@@ -3,13 +3,21 @@
 **TO-DO-LIST**
 
 ~~- Signup and Login~~
+
 ~~- List of Plants~~
+
 ~~- User Authentication for User and Admin (Pat)~~
+
 ~~- Admin Homepage (Pat)~~
+
 ~~- Add and Update Record in Admin Homepage(Pat)~~
+
 ~~- Add SearchView (Pat)~~
+
 ~~- Working SearchView (Pat)~~
+
 - Description and How to Take Care of Plant (Ramoel)
+
 
 
 Project Name (Android Studio): FinalProject
