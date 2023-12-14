@@ -9,14 +9,30 @@ import androidx.recyclerview.widget.RecyclerView
 
 class PlantAdapter(private val plantList:ArrayList<Plant>)
     : RecyclerView.Adapter<PlantAdapter.PlantViewHolder>() {
-    class PlantViewHolder(itemView:View) : RecyclerView.ViewHolder(itemView) {
+
+    private lateinit var  mListener: onItemClickListener
+    interface onItemClickListener{
+        fun onItemClick(position: Int)
+    }
+
+    fun setOnItemClickListener(listener: onItemClickListener){
+        mListener = listener
+    }
+
+    class PlantViewHolder(itemView:View, listener: onItemClickListener) : RecyclerView.ViewHolder(itemView) {
         val imageView: ImageView = itemView.findViewById(R.id.imageView)
         val textView: TextView = itemView.findViewById(R.id.textView)
+
+        init {
+            itemView.setOnClickListener {
+                listener.onItemClick(adapterPosition)
+            }
+        }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PlantViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.each_item, parent, false)
-        return PlantViewHolder(view)
+        return PlantViewHolder(view,mListener)
     }
 
     override fun onBindViewHolder(holder: PlantViewHolder, position: Int) {

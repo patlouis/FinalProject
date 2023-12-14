@@ -1,6 +1,7 @@
 package com.example.finalproject
 
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -44,5 +45,17 @@ class ThirdActivity : AppCompatActivity() {
 
         plantAdapter = PlantAdapter(plantList)
         recyclerView.adapter = plantAdapter
+        getUserData()
+    }
+
+    private fun getUserData(){
+        var adapter = PlantAdapter(plantList)
+        recyclerView.adapter = adapter
+        adapter.setOnItemClickListener(object : PlantAdapter.onItemClickListener{
+            override fun onItemClick(position: Int) {
+                Toast.makeText(this@ThirdActivity, "You Clicked on item no. $position",Toast.LENGTH_LONG).show()
+            }
+
+        })
     }
 }
