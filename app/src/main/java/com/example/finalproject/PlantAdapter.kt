@@ -7,7 +7,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class PlantAdapter(private val plantList:ArrayList<Plant>)
+class PlantAdapter(private var plantList:ArrayList<Plant>)
     : RecyclerView.Adapter<PlantAdapter.PlantViewHolder>() {
 
     private lateinit var  mListener: onItemClickListener
@@ -44,4 +44,5 @@ class PlantAdapter(private val plantList:ArrayList<Plant>)
     override fun getItemCount(): Int {
         return plantList.size
     }
+
 }
