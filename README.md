@@ -6,7 +6,8 @@ TO-DO-LIST
 ~~- List of Plants~~
 ~~- User Authentication for User and Admin (Pat)~~
 - Plant Description and How to Take Care (Ramoel)
-- Admin Homepage (Pat)
+~~- Admin Homepage (Pat)~~
+- Add and Update Record in Admin Homepage(Pat)
 
 Project Name (Android Studio): FinalProject
 
