@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PlantActivity">
+
+    <ImageView
+        android:id="@+id/plantIV"
+        android:layout_width="0dp"
+        android:layout_height="250dp"
+        android:layout_marginTop="48dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/image1" />
+
+    <TextView
+        android:id="@+id/plantNameTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Plant Name"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/plantIV" />
+
+    <TextView
+        android:id="@+id/plantDescriptionTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eu sapien eget leo euismod viverra ac eget ante. In vitae tellus a lectus vestibulum pharetra in ut diam. Suspendisse ultrices egestas libero. Aliquam vulputate arcu semper nibh congue, ac posuere leo tincidunt. Donec lacus enim, lacinia quis lacus ut, aliquam aliquam odio. Vestibulum ut gravida ex. Nam iaculis, lorem sed faucibus rutrum, mi augue accumsan ex, eget hendrerit sapien felis at augue. Donec nec aliquam purus. In hac habitasse platea dictumst. Duis facilisis nisi sed massa congue, eu porttitor sapien dictum. Suspendisse erat libero, mollis non hendrerit eget, vestibulum nec dolor. Mauris vel dignissim sem. Cras fermentum sollicitudin est vitae mollis. Proin at tempus felis, nec egestas quam."
+        android:textSize="19sp"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/plantNameTV" />
+
+    <Button
+        android:id="@+id/backBtn"
+        android:layout_width="85dp"
+        android:layout_height="45dp"
+        android:text="Back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
