@@ -16,6 +16,41 @@ class FourthActivity : AppCompatActivity() {
         setContentView(R.layout.admin_homepage)
     }
 
+    fun addRecord(view: View) {
+        val dialogBuilder = AlertDialog.Builder(this)
+        val inflater = this.layoutInflater
+        val dialogView = inflater.inflate(R.layout.add_dialog, null) // Assuming you have a layout file for adding a record
+        dialogBuilder.setView(dialogView)
+
+        val editEmail = dialogView.findViewById<EditText>(R.id.addEmail)
+        val editFName = dialogView.findViewById<EditText>(R.id.addFName)
+        val editPassword = dialogView.findViewById<EditText>(R.id.addPassword)
+
+        dialogBuilder.setTitle("Add Record")
+        dialogBuilder.setMessage("Enter data below")
+        dialogBuilder.setPositiveButton("Add", DialogInterface.OnClickListener { dialogInterface, i ->
+            val addEmail = editEmail.text.toString()
+            val addFName = editFName.text.toString()
+            val addPassword = editPassword.text.toString()
+            val databaseHandler: DatabaseHandler = DatabaseHandler(this)
+
+            if (addEmail.trim() != "" && addFName.trim() != "" && addPassword.trim() != "") {
+                val status = databaseHandler.addEmployee(EmpModelClass(addEmail, addFName, addPassword))
+                if (status > -1) {
+                    Toast.makeText(this, "Record Added", Toast.LENGTH_LONG).show()
+                }
+            } else {
+                Toast.makeText(this, "Email, name, and password cannot be blank", Toast.LENGTH_LONG).show()
+            }
+        })
+        dialogBuilder.setNegativeButton("Cancel", DialogInterface.OnClickListener { dialogInterface, i ->
+
+        })
+
+        val b = dialogBuilder.create()
+        b.show()
+    }
+
     fun viewRecord(view: View) {
         val databaseHandler: DatabaseHandler = DatabaseHandler(this)
         val emp: List<EmpModelClass> = databaseHandler.viewEmployee()
