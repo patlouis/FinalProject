@@ -6,12 +6,15 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import androidx.appcompat.widget.SearchView
+import java.util.Locale
 
 class ThirdActivity : AppCompatActivity() {
 
     private lateinit var recyclerView: RecyclerView
     private lateinit var plantList: ArrayList<Plant>
     private lateinit var plantAdapter: PlantAdapter
+    private lateinit var searchView: SearchView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,9 +26,32 @@ class ThirdActivity : AppCompatActivity() {
         recyclerView = findViewById(R.id.recyclerView)
         recyclerView.setHasFixedSize(true)
         recyclerView.layoutManager = LinearLayoutManager(this)
+        addDataToList()
 
-        // Initialize plantList
-        plantList = ArrayList()
+        plantAdapter = PlantAdapter(plantList)
+        recyclerView.adapter = plantAdapter
+
+        searchView = findViewById(R.id.searchView)
+        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener{
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                return false
+            }
+
+            override fun onQueryTextChange(newText: String?): Boolean {
+                filterList(newText)
+                return true
+            }
+        })
+
+        //Directs to plant description when clicked
+        plantAdapter.onItemClick ={
+            val intent = Intent(this, PlantActivity::class.java)
+            intent.putExtra("plant", it)
+            startActivity(intent)
+        }
+    }
+
+    private fun addDataToList() {
 
         plantList.add(Plant(R.drawable.image1, "Bat Flower", "The Bat flower is a tropical plant native to southeast asia. It is a herbaceous perennial, growing from a rhizome and reaching up to three feet in height. The leaves are large, heart-shaped, and glossy green. The showy flowers are shaped like bats with yellow or purple wings that can reach five inches across. The flowers have a sweet scent and attract polinators such as flies, bees, and butterflies."))
         plantList.add(Plant(R.drawable.image2, "Carrion Plant", "Carrion flowers, also known as corpse flowers or stinking flowers, are mimetic flowers that emit an odor that smells like rotting flesh. Apart from the scent, carrion flowers often display additional characteristics that contribute to the mimesis of a decaying corpse. These include their specific coloration (red, purple, brown), the presence of setae and orifice-like flower architecture. Carrion flowers attract mostly scavenging flies and beetles as pollinators. Some species may trap the insects temporarily to ensure the gathering and transfer of pollen."))
@@ -43,16 +69,24 @@ class ThirdActivity : AppCompatActivity() {
         plantList.add(Plant(R.drawable.image14, "Spiderwort", "Tradescantia, also known as spiderwort is a genus 85 species of herbaceous perennial wildflowers in the family Commelinaceae, native to the Americas from southern Canada and northern Argentina. radescantia are herbaceous perennials and include both climbing and trailing species, reaching 30–60 centimetres (0.98–1.97 ft) in height. The leaves are long, thin and blade-like to lanceolate, from 3–45 cm long (1.2–17.7 in). The flowers can be white, pink, purple or blue, with three petals and six yellow anthers (or rarely, four petals and eight anthers). The sap is mucilaginous and clear"))
         plantList.add(Plant(R.drawable.image15, "Venus Fly Trap", "The Venus flytrap (Dionaea muscipula) is a carnivorous plant native to the temperate and subtropical wetlands of North Carolina and South Carolina, on the East Coast of the United States. The Venus flytrap is a small plant whose structure can be described as a rosette of four to seven leaves, which arise from a short subterranean stem that is actually a bulb-like object. Each stem reaches a maximum size of about three to ten centimeters, depending on the time of year; longer leaves with robust traps are usually formed after flowering. Flytraps that have more than seven leaves are colonies formed by rosettes that have divided beneath the ground."))
         plantList.add(Plant(R.drawable.image16, "Woodland Phlox", "Phlox divaricata, the wild blue phlox, woodland phlox, or wild sweet william, is a species of flowering plant in the family Polemoniaceae, native to forests and fields in eastern North America. Wild blue phlox is a semi-evergreen perennial growing 25–50 cm (10–20 in) tall with opposite, unstalked, hairy leaves 2.5–5 cm (1–2 in) in length and ovate-lanceolate in shape. Flowers appear in late spring and early summer. They are pleasantly fragrant and 2–4 cm (3⁄4–1+1⁄2 in) in diameter, with five petals fused at the base into a thin tube. The petals are a variety of pastel colors: blue-lavender, light purple, pink, or white. Flowers bloom March to May. It grows in moist, deciduous woods and bluffs."))
+    }
 
+    private fun filterList(query: String?) {
+        if (query != null) {
+            val filteredList = ArrayList<Plant>()
+            val queryLowercase = query.lowercase(Locale.ROOT)
 
-        plantAdapter = PlantAdapter(plantList)
-        recyclerView.adapter = plantAdapter
+            for (i in plantList) {
+                if (i.name.lowercase(Locale.ROOT).contains(queryLowercase)) {
+                    filteredList.add(i)
+                }
+            }
 
-        //Directs to plant description when clicked
-        plantAdapter.onItemClick ={
-            val intent = Intent(this, PlantActivity::class.java)
-            intent.putExtra("plant", it)
-            startActivity(intent)
+            if (filteredList.isEmpty()) {
+                Toast.makeText(this, "No data found", Toast.LENGTH_SHORT).show()
+            } else {
+                plantAdapter.setFilteredList(filteredList)
+            }
         }
     }
 }
