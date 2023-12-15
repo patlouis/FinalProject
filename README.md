@@ -3,10 +3,10 @@
 **INTRODUCTION**
 
 Welcome to our Plant Companion app — your green haven for all things botanical! Dive into a world of plants, where our application 
-acts as a dynamic plant dictionary. Users can effortlessly explore a curated list of plants, accompanied by detailed information and expert care guidelines.
+acts as a dynamic plant dictionary. Users can effortlessly explore a curated list of plants, accompanied by detailed information.
 
 What sets us apart is the dual-access feature catering to both users and administrators. For enthusiasts, it's a seamless 
-journey of discovery and learning, while administrators wield the power to curate and maintain a thriving plant database.
+journey of discovery and learning, while administrators wield the power to curate and maintain the user database.
 
 Join us in this digital botanical realm, where plant care meets accessibility. Unleash your green curiosity and cultivate 
 your knowledge with our user-friendly and versatile application.
