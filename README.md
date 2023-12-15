@@ -16,7 +16,9 @@
 
 ~~- Working SearchView (Pat)~~
 
-- Description and How to Take Care of Plant (Ramoel)
+~~- Added PlantActivity (Ramoel)~~
+
+~~- Added Plant Description (Ramoel)~~
 
 Admin Account: email == admin && password == admin
 
