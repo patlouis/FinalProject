@@ -2,7 +2,7 @@
 
 **INTRODUCTION**
 
-Welcome to our Plant Companion app — your green haven for all things botanical! Dive into a world of plants, where our application 
+Welcome to our Plant Dictionary app — your green haven for all things botanical! Dive into a world of plants, where our application 
 acts as a dynamic plant dictionary. Users can effortlessly explore a curated list of plants, accompanied by detailed information.
 
 What sets us apart is the dual-access feature catering to both users and administrators. For enthusiasts, it's a seamless 
